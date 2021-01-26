@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:layout_height="match_parent">
 
-    <!-- GIT state colors for android studio
-    WHITE -> file is being tracked and no changes
-    RED -> file not tracked by git, (git add) for GREEN state
-    GREEN -> file is now being tracked by git but not committed, (git commit) for WHITE state
-    BLUE -> file that is tracked by git was updated, (git commit) for WHITE state
-    -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/signupTxtView"
+        style="@style/TextHeader"
+        android:text="@string/sign_up" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/nameEditTxt"
+        style="@style/EditTextField"
+        android:drawableStart="@drawable/login_icon"
+        android:drawablePadding="8dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_below="@id/signupTxtView"
+        android:hint="@string/name"
+        android:textSize="15sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        android:layout_below="@id/nameEditTxt"
+        app:boxStrokeWidth="3dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/black_900"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_email"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/login_icon"
+            android:hint="@string/email"
+            style="@style/EditTextField" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>
